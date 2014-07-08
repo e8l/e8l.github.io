@@ -6,7 +6,7 @@
     <title>test</title>
     <script>
     <!--
-      window.onload = function(e) {
+     window.onload = function(e) {
         var q = window.location.search.slice(1);
         var video = q.match(/v=(sm\d+)/);
         if (video) {
@@ -31,9 +31,11 @@
           
           var address = "http://ext.nicovideo.jp/thumb_watch/" + video + "?w=" + width + "&h=" + height;
           
-          var script = document.createElement("script");
+          /*var script = document.createElement("script");
+          script.type = "text/javascript";
           script.src = address;
-          document.querySelector("html").appendChild(script);
+          document.body.appendChild(script);*/
+          document.write("<script type='text/javascript' src='" + address + "'></script>");
         }
       };
     -->
