@@ -8,10 +8,26 @@
     <!--
       window.onload = function(e) {
         var q = window.location.search.slice(1);
-        var video = q.match(/v=(sm\d+)/)[1];
+        var video = q.match(/v=(sm\d+)/);
         if (video) {
-          var width  = q.match(/w=(\d+)/)[1] || "490"
-          var height = q.match(/h=(\d+)/)[1] || "307"
+          video = video[1];
+          
+          var width  = q.match(/w=(\d+)/);
+          var height = q.match(/h=(\d+)/);
+          
+          if (width) {
+            width = width[1];
+          }
+          else {
+            width = "490";
+          }
+          
+          if (height) {
+            height = height[1];
+          }
+          else {
+            height = "309";
+          }
           
           var address = "http://ext.nicovideo.jp/thumb_watch/" + video + "?w=" + width + "&h=" + height;
           
